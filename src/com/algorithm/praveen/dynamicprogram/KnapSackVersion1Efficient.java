@@ -19,14 +19,14 @@ public class KnapSackVersion1Efficient {
 	private int capacity = 0;
 
 	public int knapsack(int weight, int n) {
-		int k[][] = new int[n][capacity+1];
+		int k[][] = new int[n+1][capacity+1];
 		
-		for(int i=0; i<n; i++) {
+		for(int i=0; i<=n; i++) {
 			for(int w=0; w<=capacity; w++) {
 				if(i==0 || w==0){
 					k[i][w] = 0;
 				} else if(weights[i] <= w) {
-					k[i][w] = Math.max(k[i-1][w - weights[i]] + values[i], k[i-1][w]);
+					k[i][w] = Math.max(k[i-1][w - weights[i]] + values[i-1], k[i-1][w]);
 				} else {
 					k[i][w] = k[i-1][w];
 				}
@@ -42,7 +42,7 @@ public class KnapSackVersion1Efficient {
 		knapSackObject.weights = new int[]{10, 20, 30};
 		knapSackObject.capacity = 50;
 		
-		System.out.println(knapSackObject.knapsack(knapSackObject.capacity, knapSackObject.values.length-1));
+		System.out.println(knapSackObject.knapsack(knapSackObject.capacity, knapSackObject.values.length));
 
 	}
 
