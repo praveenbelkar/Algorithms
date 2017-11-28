@@ -65,6 +65,7 @@ public class MaxProfitStockStrategy {
 		int rightMaxValueIndex = getMaxValueIndex(input, mid+1, right);
 		int profitAcross = input[rightMaxValueIndex] - input[leftMinValueIndex];
 		
+		//Compare all three, and return maximum
 		if(leftProfit.profit > Math.max(rightProfit.profit, profitAcross)) {
 			return leftProfit;
 		} else if(rightProfit.profit > Math.max(leftProfit.profit, profitAcross)) {
