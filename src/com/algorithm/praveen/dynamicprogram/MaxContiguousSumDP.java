@@ -12,16 +12,8 @@ public class MaxContiguousSumDP {
 
 	public int maxContiguousDp(int[] input) {
 		int[] M = new int[input.length];
-		if(input[0] > 0) {
-			M[0] = input[0];
-		} else {
-			M[0] = 0;
-		}
-		
-		for(int i=1; i<M.length; i++) {
-			M[i] = 0;
-		}
-		
+		M[0] = input[0] > 0 ? input[0] : 0;
+
 		for(int i=1; i<input.length; i++) {
 			if(M[i-1] + input[i] > 0){
 				M[i] = M[i-1] + input[i];
