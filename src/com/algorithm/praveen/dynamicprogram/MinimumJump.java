@@ -18,7 +18,7 @@ public class MinimumJump {
             for (int j = 0; j < i; j++) {
                 temp = i-array[j];
                 //if(temp <= 0 ) {
-                if( i <= j+array[j] ) {
+                if( i <= j+array[j] ) { // can i be reachable from j ?
                     if(minimumJump[i] <= 0) {
                         minimumJump[i] = minimumJump[j] + 1;
                     }
@@ -29,7 +29,7 @@ public class MinimumJump {
         }
 
         System.out.println(minimumJump[array.length]);
-        Arrays.stream(minimumJump).forEach(System.out::println);
+        //Arrays.stream(minimumJump).forEach(System.out::println);
     }
 
     int getMinimum(int a, int b){

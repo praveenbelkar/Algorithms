@@ -35,4 +35,8 @@ public class NodeUtils {
         }
         System.out.println("--------------------");
     }
+
+    public static boolean isLeaf(Node node) {
+        return node != null && node.left == null && node.right == null ;
+    }
 }

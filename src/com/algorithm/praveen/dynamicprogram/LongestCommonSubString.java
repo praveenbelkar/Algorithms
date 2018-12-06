@@ -8,6 +8,7 @@ public class LongestCommonSubString {
         char[] cInput2 = input2.toCharArray();
 
         int max = Integer.MIN_VALUE;
+        int startIndex = 0;
         for(int i = 1; i < cInput1.length; i++) {
             for(int j = 1; j < cInput2.length; j++) {
                 if(cInput1[i] == cInput2[j]) {
@@ -24,6 +25,8 @@ public class LongestCommonSubString {
 
         //System.out.println(maxInArray(lcs, input1.length(), input2.length()));
         System.out.println(max);
+        System.out.println(startIndex);
+        //System.out.println(input1.substring(startIndex-1, startIndex-1+max));
     }
 
     public int maxInArray(int[][] lcs, int row, int col) {
