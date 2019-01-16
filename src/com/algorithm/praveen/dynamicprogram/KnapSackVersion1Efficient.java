@@ -18,15 +18,15 @@ public class KnapSackVersion1Efficient {
 	private int[] weights;
 	private int capacity = 0;
 
-	public int knapsack(int weight, int n) {
+	public int knapsack(int weights, int n) {
 		int k[][] = new int[n+1][capacity+1];
 		
 		for(int i=0; i<=n; i++) {
 			for(int w=0; w<=capacity; w++) {
 				if(i==0 || w==0){
 					k[i][w] = 0;
-				} else if(weights[i-1] <= w) {
-					k[i][w] = Math.max(k[i-1][w - weights[i-1]] + values[i-1], k[i-1][w]);
+				} else if(this.weights[i-1] <= w) {
+					k[i][w] = Math.max(k[i-1][w - this.weights[i-1]] + values[i-1], k[i-1][w]);
 				} else {
 					k[i][w] = k[i-1][w];
 				}
