@@ -3,28 +3,28 @@ package com.algorithm.praveen.binaryTree;
 //Check if the given binary tree is mirror image around the root node
 public class CheckMirror {
 
-    public boolean checkIfMirror(Node left, Node right) {
-        if(onlyOneOfThemIsNull(left, right) || bothAreNotEqual(left,right) ) {
+    public boolean checkIfMirror(Node alpha, Node beta) {
+        if(onlyOneOfThemIsNull(alpha, beta) || bothAreNotEqual(alpha,beta) ) {
             return false;
         }
-        return bothAreNull(left, right) ||
-                (bothAreEqual(left, right) && checkIfMirror(left.left, right.right) && checkIfMirror(left.right, right.left));
+        return bothAreNull(alpha, beta) ||
+                (bothAreEqual(alpha, beta) && checkIfMirror(alpha.left, beta.right) && checkIfMirror(alpha.right, beta.left));
     }
 
-    private boolean bothAreNotEqual(Node left, Node right) {
-        return (left != null & right != null) && (left.data != right.data);
+    private boolean bothAreNotEqual(Node alpha, Node beta) {
+        return (alpha != null & beta != null) && (alpha.data != beta.data);
     }
 
-    private boolean bothAreEqual(Node left, Node right) {
-        return left.data == right.data;
+    private boolean bothAreEqual(Node alpha, Node beta) {
+        return alpha.data == beta.data;
     }
 
-    private boolean bothAreNull(Node left, Node right) {
-        return null == left && null == right;
+    private boolean bothAreNull(Node alpha, Node beta) {
+        return null == alpha && null == beta;
     }
 
-    private boolean onlyOneOfThemIsNull(Node left, Node right) {
-        return (left == null && right != null) || (left != null && right == null);
+    private boolean onlyOneOfThemIsNull(Node alpha, Node beta) {
+        return (alpha == null && beta != null) || (alpha != null && beta == null);
     }
 
     public static void main(String[] args) {

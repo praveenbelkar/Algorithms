@@ -1,8 +1,6 @@
 package com.algorithm.praveen.binaryTree;
 
-import java.util.Arrays;
-
-public class PathWithGivenSum {
+public class RootToLeafPathWithGivenSum {
 
     public void printPathWithGivenSum(Node node, Node[] path, int index, int sum, int currentSum) {
         if(node == null) {
@@ -53,7 +51,7 @@ public class PathWithGivenSum {
         node3.right = node7;
 
         NodeUtils.printTree(node1);
-        PathWithGivenSum mainObject = new PathWithGivenSum();
+        RootToLeafPathWithGivenSum mainObject = new RootToLeafPathWithGivenSum();
         Node[] path = new Node[7];
         mainObject.printPathWithGivenSum(node1, path, 0, 7, 0);
 

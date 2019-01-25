@@ -21,8 +21,8 @@ public class CuttingRod {
         for(int i=0; i < lengths.length; i++) {
             table[i][0] = 0;
         }
-        for(int i=0; i <= totalLength; i++) {
-            table[0][i] = i * profit[0];
+        for(int j=0; j <= totalLength; j++) {
+            table[0][j] = j * profit[0];
         }
 
         for(int i=1; i < lengths.length; i++) {

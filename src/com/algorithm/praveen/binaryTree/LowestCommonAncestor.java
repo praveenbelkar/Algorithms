@@ -9,7 +9,6 @@ public class LowestCommonAncestor {
 
         if(node.data == alpha.data || node.data == beta.data) {
             return node;
-
         }
 
         Node a = lca(node.left, alpha, beta);
