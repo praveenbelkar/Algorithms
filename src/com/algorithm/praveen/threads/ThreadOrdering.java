@@ -38,7 +38,10 @@ public class ThreadOrdering {
                             e.printStackTrace();
                         }
                     }
-                    System.out.println(list.get(i));
+                    System.out.print(list.get(i) + " ");
+                    if(list.get(i) == 9) {
+                        System.out.println();
+                    }
                     flag.flag = false;
                     activateNextFlag();
                     lock.notifyAll();
@@ -50,7 +53,6 @@ public class ThreadOrdering {
             synchronized (lock) {
                 flagPosition = (flagPosition + 1) % flagArray.length;
                 flagArray[flagPosition].flag = true;
-                //System.out.println("flagPosition: "+flagPosition);
             }
         }
     }
@@ -70,7 +72,7 @@ public class ThreadOrdering {
         Task task9 = new Task(lock, flagArray[8], Arrays.asList(9,9,9,9,9));
 
 
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        ExecutorService executorService = Executors.newFixedThreadPool(9);
         executorService.submit(task1);
         executorService.submit(task2);
         executorService.submit(task3);

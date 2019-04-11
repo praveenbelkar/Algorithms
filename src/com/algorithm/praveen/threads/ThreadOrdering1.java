@@ -34,7 +34,10 @@ public class ThreadOrdering1 {
                             e.printStackTrace();
                         }
                     }
-                    System.out.println(list.get(i));
+                    System.out.print(list.get(i) + " ");
+                    if(list.get(i) == 3) {
+                        System.out.println();
+                    }
                     activateNextFlag();
                     lock.notifyAll();
                 }
