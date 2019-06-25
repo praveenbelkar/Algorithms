@@ -1,6 +1,6 @@
 package com.algorithm.leetcode;
 
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * https://leetcode.com/problems/missing-number/
