@@ -28,12 +28,40 @@ public class P264_UglyNumber_II {
         cache[0] = 0;
         cache[1] = 1;
         while (cnt < n) {
-            if(isUglyNumber(i, cache)) {
+            if(isUgly(i, cache)) {
                 cnt++;
             }
             i++;
         }
         return --i;
+    }
+
+    public boolean isUgly(int num, int[] cache) {
+        if(num == 1) {
+            return true;
+        }
+        if(num == 0) {
+            return false;
+        }
+
+        while(num != 1) {
+            if(cache[num] != -1) {
+                return cache[num] == 1 ? true: false;
+            }
+            if(num % 2 == 0) {
+                num = num / 2;
+            } else if( num %3 == 0) {
+                num = num / 3;
+            } else if( num % 5 == 0) {
+                num = num / 5;
+            } else {
+                cache[num] = 0;
+                return false;
+            }
+        }
+
+        cache[num] = 1;
+        return true;
     }
 
     private boolean isUglyNumber(int num, int[] cache) {
